@@ -68,7 +68,7 @@ h1, h3{
     height: 80px;
 }
 
-#loading {
+/* #loading {
     animation: rotation 2s infinite linear;
     border-radius: 50%;
     
@@ -81,7 +81,7 @@ h1, h3{
     to {
             -webkit-transform: rotate(359deg);
     }
-}
+} */
 
 #announce{
     display: block;
