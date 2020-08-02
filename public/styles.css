@@ -318,6 +318,31 @@ h1, h3{
     padding-left: 0;
 }
 
+/* ------------------------------About Me section---------------------- */
+.aboutme-img{
+    margin-top: 20px;
+    border-radius: 50%;
+    border-style: solid;
+    border-color: white;
+    height: 200px;
+    width: 230px;
+}
+.aboutme-container {
+    text-align: center;
+    color: white;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 30px;
+}
+.aboutme-container h2{
+    margin-top: 15px;
+}
+.aboutme-container p{
+    margin-top: 10px;
+}
+.aboutme-donotknow{
+    margin-top: 30% !important;
+}
 /* -----------------------media ---------------- */
 
 
@@ -500,5 +525,10 @@ h1, h3{
         padding-left: 15px;
         margin-top: 30px;
         margin-bottom: 40%;
+    }
+    /* --------------------------------About me Section---------------------- */
+    
+    .aboutme-container p{
+        font-size: 1rem;
     }
 }

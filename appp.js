@@ -190,10 +190,14 @@ appp.get("/world", function(req, res){
     });
 });
 
-appp.get("/pictures/coronavirus.PNG", function(req, res){
-    res.writeHead(200, {'Content-Type': 'image/png'});
-    res.end("/pictures/coronavirus.PNG");
+appp.get("/about-me", function(req, res){
+    res.render("about-me");
 });
+
+// appp.get("/pictures/coronavirus.PNG", function(req, res){
+//     res.writeHead(200, {'Content-Type': 'image/png'});
+//     res.end("/pictures/coronavirus.PNG");
+// });
 
 var port_number = (process.env.PORT || 3000);
 appp.listen(port_number, function(){
