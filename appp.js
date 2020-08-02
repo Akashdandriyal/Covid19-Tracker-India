@@ -177,7 +177,7 @@ appp.get("/world", function(req, res){
     });
 });
 
-app.get("/pictures/coronavirus.PNG", function(req, res){
+appp.get("/pictures/coronavirus.PNG", function(req, res){
     res.writeHead(200, {'Content-Type': 'image/png'});
     res.end("/pictures/coronavirus.PNG");
 });
