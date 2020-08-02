@@ -177,7 +177,7 @@ appp.get("/world", function(req, res){
     });
 })
 
-var port_number = server.listen(process.env.PORT || 3000);
+var port_number = (process.env.PORT || 3000);
 appp.listen(port_number, function(){
     console.log("Server is running on port "+ port_number);
 });
