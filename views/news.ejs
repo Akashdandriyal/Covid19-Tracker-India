@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid19 Tracker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montez&family=Montserrat:wght@400&family=Poppins:wght@700&family=Tajawal&display=swap" rel="stylesheet">    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles.css">
+    <script src="https://kit.fontawesome.com/6eee5c1f8b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="progress-bar"></div>
+    <section id="news-updates">
+        <div class="container news-container">
+            <%- include('partials/header'); -%>
+            <h1>Latest NEWS updates on Corona Virus</h1>
+            <% newsData.forEach(element => { %>
+                <div class="news-data">
+                    <div>
+                        <h2><%= element.title %></h2>
+                    </div>
+                    <div>
+                        <h4 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">SOURCE: <%= element.source.name %></h4>
+                    </div>
+                    <div>
+                        <h5 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">AUTHOR: <%= element.author %> </h5>
+                    </div>
+                    <div>
+                        <p class="news-description"><strong><%= element.description %> </strong></p>
+                    </div>
+                    <div class="row news-row">
+                        <img class="news-img" src=<%= element.urlToImage %> alt="article-pic">
+                    </div>
+                    <div>
+                        <p><%= element.content %> <a style="display: inline; color: black;" href=<%= element.url %> target="blank"><strong>Read More</strong></a></p>
+                    </div>
+                    
+                </div>
+            <% }); %>
+            
+        </div>
+    </section>
+    <%- include('partials/footer') -%> 
+    <script src="/index2.js"></script>
+</body>
+</html>

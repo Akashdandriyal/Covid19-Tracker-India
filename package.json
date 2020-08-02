@@ -1,0 +1,19 @@
+{
+  "name": "covid-project",
+  "version": "1.0.0",
+  "description": "A project to daily show Covid19 updates.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Akash Dandriyal",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.3",
+    "express": "^4.17.1",
+    "lodash": "^4.17.19",
+    "nanobar": "^0.4.2"
+  }
+}
