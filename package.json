@@ -4,6 +4,7 @@
   "description": "A project to daily show Covid19 updates.",
   "main": "app.js",
   "scripts": {
+    "start": "node appp.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Akash Dandriyal",
