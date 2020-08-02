@@ -11,19 +11,19 @@ appp.use(express.static("public"));
 require('dotenv').config({path: __dirname + '/.env'});
 // Corona virus data fetch for World
 let covidData = "";
-const url = "https://api.covid19api.com/summary";
-https.get(url, function(response){
-    let body = "";
-    response.on("data", function(chunk){
-        body += chunk;
+// const url = "https://api.covid19api.com/summary";
+// https.get(url, function(response){
+//     let body = "";
+//     response.on("data", function(chunk){
+//         body += chunk;
         
-    });
+//     });
 
-    response.on("end", function(){
-        covidData = JSON.parse(body);
+//     response.on("end", function(){
+//         covidData = JSON.parse(body);
         
-    });
-});
+//     });
+// });
 
 // Corona virus lab data fetch for india
 let labData = "";
@@ -60,37 +60,50 @@ https.get(url2, function(response){
 
 
 appp.get("/", function(req, res){
-    const fullDate = covidData.Countries[76].Date;
-    let date = fullDate.slice(8, 10);
-    let month = fullDate.slice(5, 7);
-    let year = fullDate.slice(0,4);
-    let time = fullDate.slice(11, 19);
-    const confirmedCase = covidData.Countries[76].TotalConfirmed;
-    const newConfirmed = covidData.Countries[76].NewConfirmed;
-    const deaths = covidData.Countries[76].TotalDeaths;
-    const newDeaths = covidData.Countries[76].NewDeaths;
-    const recovered = covidData.Countries[76].TotalRecovered;
-    const newRecovered = covidData.Countries[76].NewRecovered;
-    const activeCase = confirmedCase - deaths - recovered;
-    const newActiveCase = newConfirmed - newDeaths - newRecovered;
-    const recoveryRate = ((recovered / confirmedCase) * 100).toFixed(2);
-    const testsDone = labData.tested[(labData.tested.length-1)].totalsamplestested;
-    const newTestsDone = labData.tested[(labData.tested.length-1)].samplereportedtoday
-    res.render("home", {
-        confirmedCase: confirmedCase, 
-        newConfirmed: newConfirmed, 
-        deaths: deaths, 
-        newDeaths: newDeaths, 
-        recovered: recovered, 
-        newRecovered: newRecovered, 
-        activeCase: activeCase, 
-        newActiveCase: newActiveCase, 
-        recoveryRate: recoveryRate, 
-        date: (date + "-" + month + "-" + year), 
-        time: time, 
-        testsDone: testsDone, 
-        newTestsDone: newTestsDone
+    const url = "https://api.covid19api.com/summary";
+    https.get(url, function(response){
+        let body = "";
+        response.on("data", function(chunk){
+            body += chunk;
+            
+        });
+
+        response.on("end", function(){
+            covidData = JSON.parse(body);
+            const fullDate = covidData.Countries[76].Date;
+            let date = fullDate.slice(8, 10);
+            let month = fullDate.slice(5, 7);
+            let year = fullDate.slice(0,4);
+            let time = fullDate.slice(11, 19);
+            const confirmedCase = covidData.Countries[76].TotalConfirmed;
+            const newConfirmed = covidData.Countries[76].NewConfirmed;
+            const deaths = covidData.Countries[76].TotalDeaths;
+            const newDeaths = covidData.Countries[76].NewDeaths;
+            const recovered = covidData.Countries[76].TotalRecovered;
+            const newRecovered = covidData.Countries[76].NewRecovered;
+            const activeCase = confirmedCase - deaths - recovered;
+            const newActiveCase = newConfirmed - newDeaths - newRecovered;
+            const recoveryRate = ((recovered / confirmedCase) * 100).toFixed(2);
+            const testsDone = labData.tested[(labData.tested.length-1)].totalsamplestested;
+            const newTestsDone = labData.tested[(labData.tested.length-1)].samplereportedtoday
+            res.render("home", {
+                confirmedCase: confirmedCase, 
+                newConfirmed: newConfirmed, 
+                deaths: deaths, 
+                newDeaths: newDeaths, 
+                recovered: recovered, 
+                newRecovered: newRecovered, 
+                activeCase: activeCase, 
+                newActiveCase: newActiveCase, 
+                recoveryRate: recoveryRate, 
+                date: (date + "-" + month + "-" + year), 
+                time: time, 
+                testsDone: testsDone, 
+                newTestsDone: newTestsDone
+            });
+        });
     });
+    
 });
 
 appp.post("/states", function(req, res){
