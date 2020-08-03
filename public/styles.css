@@ -108,6 +108,9 @@ h1, h3{
     color: white;
     text-align: center;
 }
+.data-div h2{
+    font-size: 1.5rem;
+}
 .update-icon{
     margin-right: 5%;
     height: 80px;
@@ -417,7 +420,6 @@ h1, h3{
         width: 30%;
     }
     .data-div{
-        font-size: 1.5rem;
         width: 60%;
     }
     .fa-ambulance{
