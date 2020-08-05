@@ -83,6 +83,12 @@ appp.get("/", function(req, res){
             const newRecovered = covidData.Countries[76].NewRecovered;
             const activeCase = confirmedCase - deaths - recovered;
             const newActiveCase = newConfirmed - newDeaths - newRecovered;
+            if(newActiveCase > 0){
+                newActiveCase = "+ " + newActiveCase;
+            }
+            else{
+                newActiveCase= "- " + newActiveCase;
+            }
             const recoveryRate = ((recovered / confirmedCase) * 100).toFixed(2);
             const testsDone = labData.tested[(labData.tested.length-1)].totalsamplestested;
             const newTestsDone = labData.tested[(labData.tested.length-1)].samplereportedtoday
