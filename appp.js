@@ -86,9 +86,6 @@ appp.get("/", function(req, res){
             if(newActiveCase > 0){
                 newActiveCase = "+ " + newActiveCase;
             }
-            else{
-                newActiveCase= "- " + newActiveCase;
-            }
             const recoveryRate = ((recovered / confirmedCase) * 100).toFixed(2);
             const testsDone = labData.tested[(labData.tested.length-1)].totalsamplestested;
             const newTestsDone = labData.tested[(labData.tested.length-1)].samplereportedtoday
