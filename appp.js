@@ -82,7 +82,7 @@ appp.get("/", function(req, res){
             const recovered = covidData.Countries[76].TotalRecovered;
             const newRecovered = covidData.Countries[76].NewRecovered;
             const activeCase = confirmedCase - deaths - recovered;
-            const newActiveCase = newConfirmed - newDeaths - newRecovered;
+            var newActiveCase = newConfirmed - newDeaths - newRecovered;
             if(newActiveCase > 0){
                 newActiveCase = "+ " + newActiveCase;
             }
