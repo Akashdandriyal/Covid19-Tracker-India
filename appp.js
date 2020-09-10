@@ -9,21 +9,8 @@ appp.set('view engine', 'ejs');
 appp.use(bodyParser.urlencoded({extended: true}));
 appp.use(express.static("public"));
 require('dotenv').config({path: __dirname + '/.env'});
-// Corona virus data fetch for World
 let covidData = "";
-// const url = "https://api.covid19api.com/summary";
-// https.get(url, function(response){
-//     let body = "";
-//     response.on("data", function(chunk){
-//         body += chunk;
-        
-//     });
 
-//     response.on("end", function(){
-//         covidData = JSON.parse(body);
-        
-//     });
-// });
 
 // Corona virus lab data fetch for india
 let labData = "";
@@ -197,10 +184,6 @@ appp.get("/about-me", function(req, res){
     res.render("about-me");
 });
 
-// appp.get("/pictures/coronavirus.PNG", function(req, res){
-//     res.writeHead(200, {'Content-Type': 'image/png'});
-//     res.end("/pictures/coronavirus.PNG");
-// });
 
 var port_number = (process.env.PORT || 3000);
 appp.listen(port_number, function(){
