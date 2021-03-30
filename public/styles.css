@@ -1,179 +1,179 @@
 .progress-bar {
-    background: linear-gradient(to right, white var(--scroll), transparent 0);
-    background-repeat: no-repeat;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 4px;
-    z-index: 1;
+  background: linear-gradient(to right, white var(--scroll), transparent 0);
+  background-repeat: no-repeat;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  z-index: 1;
 }
 /* ----------------------------------------------------------------------------- */
 
-body{
-    background-color: #41aceb;
-    /* font-family: 'Tajawal', sans-serif; */
-    font-family: 'Montserrat', sans-serif;
+body {
+  background-color: #41aceb;
+  /* font-family: 'Tajawal', sans-serif; */
+  font-family: "Montserrat", sans-serif;
 }
-h1, h3{
-    font-family: 'Poppins', sans-serif;
+h1,
+h3 {
+  font-family: "Poppins", sans-serif;
 }
 .landing-page {
-    height:100vh;
-    width: 100%; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    position: relative;
+  height: 100vh;
+  width: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative;
 }
-.container{
-    padding-top: 5%;
-    height: 100%;
-    width: 100%;
+.container {
+  padding-top: 5%;
+  height: 100%;
+  width: 100%;
 }
-.heading-row{
-    padding-top: 5%;
+.heading-row {
+  padding-top: 5%;
 }
 
 .navbar-dark .navbar-nav .nav-link {
-    color: rgba(255,255,255,.8);
+  color: rgba(255, 255, 255, 0.8);
 }
 .navbar-dark .navbar-nav .nav-link:hover {
-    color: white;
+  color: white;
 }
-.nav-item a{
-    color: white;
+.nav-item a {
+  color: white;
 }
-.heading{
-    font-size: 80px;
-    color: white;
-}
-
-.request{
-    background-color: white;
-    color: tomato;
-    text-align: center;
-}
-.request div{
-    padding: 6% 0;
-    font-family: 'Poppins', sans-serif;
-    font-size: 30px;
-}
-.request span{
-    color: darkblue;
+.heading {
+  font-size: 80px;
+  color: white;
 }
 
-.virus-img{
-    height: 80px;
+.request {
+  background-color: white;
+  color: tomato;
+  text-align: center;
+}
+.request div {
+  padding: 6% 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 30px;
+}
+.request span {
+  color: darkblue;
+}
+
+.virus-img {
+  height: 80px;
 }
 
 #loading {
-    animation: rotation 2s infinite linear;
-    border-radius: 50%;
-    
+  animation: rotation 2s infinite linear;
+  border-radius: 50%;
 }
 
 @keyframes rotation {
-    from {
-            -webkit-transform: rotate(0deg);
-    }
-    to {
-            -webkit-transform: rotate(359deg);
-    }
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+  }
 }
 
-#announce{
-    display: block;
-    margin-left: auto;
-    height: 100%;
+#announce {
+  display: block;
+  margin-left: auto;
+  height: 100%;
 }
-.row{
-    padding-bottom: 2%;
+.row {
+  padding-bottom: 2%;
 }
-#updates{
-    background-image: linear-gradient(#41aceb , #034afc);
-    color: white;
+#updates {
+  background-image: linear-gradient(#41aceb, #034afc);
+  color: white;
 }
-.row h2{
-    font-family: 'Poppins', sans-serif;
+.row h2 {
+  font-family: "Poppins", sans-serif;
 }
-#updates h2{
-    padding: 4% 0 0 0;
-    font-family: 'Poppins', sans-serif;
+#updates h2 {
+  padding: 4% 0 0 0;
+  font-family: "Poppins", sans-serif;
 }
-.update-div{
-    display: inline-block!important;
-    position: relative;
-    color: white;
-    text-align: center;
+.update-div {
+  display: inline-block !important;
+  position: relative;
+  color: white;
+  text-align: center;
 }
-.data-div h2{
-    font-size: 1.5rem;
+.data-div h2 {
+  font-size: 1.5rem;
 }
-.update-icon{
-    margin-right: 5%;
-    height: 80px;
-    width: 100px;
+.update-icon {
+  margin-right: 5%;
+  height: 80px;
+  width: 100px;
 }
-.center-text{
-    text-align: center;
+.center-text {
+  text-align: center;
 }
-.btn{
-    margin-top: 5%;
-    color: white;
+.btn {
+  margin-top: 5%;
+  color: white;
 }
-.button-wrapper{
-    text-align: center;
+.button-wrapper {
+  text-align: center;
 }
-.form-input{
-    width: 90%;
-    margin: 0 auto;
+.form-input {
+  width: 90%;
+  margin: 0 auto;
 }
-.state-hover:hover{
-    background-color: #41aceb;
-    color: white;
+.state-hover:hover {
+  background-color: #41aceb;
+  color: white;
 }
-.wrapper{
-    width:200px;
-    padding:20px;
-    height: 150px;
+.wrapper {
+  width: 200px;
+  padding: 20px;
+  height: 150px;
 }
-#updates h2{
-    text-align: center;
+#updates h2 {
+  text-align: center;
 }
-.update-data{
-    flex: 0 0 50%;
-    /* max-width: 45%; */
-    display: inline-block;
-    margin-bottom: 4%;
+.update-data {
+  flex: 0 0 50%;
+  /* max-width: 45%; */
+  display: inline-block;
+  margin-bottom: 4%;
 }
-.update-data p{
-    margin-bottom: 0;
+.update-data p {
+  margin-bottom: 0;
 }
 /* -------------------------------------------Precaution Section----------------------------------- */
-#precaution-section{
-    background-color: white;
+#precaution-section {
+  background-color: white;
 }
 
-.carousel-text{
-    text-align: center;
-    margin-bottom: 30px;
+.carousel-text {
+  text-align: center;
+  margin-bottom: 30px;
 }
 .carousel-control-prev-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%2341aceb' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
-   }
-   
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%2341aceb' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+}
+
 .carousel-control-next-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%2341aceb' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%2341aceb' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
 }
 
 .carousel-control-prev-icon:hover {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23034afc' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
-   }
-   
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23034afc' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+}
+
 .carousel-control-next-icon:hover {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23034afc' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23034afc' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
 }
 
 /* .carousel-indicators li {
@@ -194,347 +194,349 @@ h1, h3{
     margin: 5px;
     background-color: #034afc;
 } */
-.carousel-caption{
-    color: black;
+.carousel-caption {
+  color: black;
 }
-.carousel-indicators .active{
-    background-color: #034afc;
+.carousel-indicators .active {
+  background-color: #034afc;
 }
 .carousel-indicators li {
-    background-color: #41aceb;
+  background-color: #41aceb;
 }
-.carousel-item h5{
-    font-family: 'Poppins', sans-serif;
-    color: grey;
+.carousel-item h5 {
+  font-family: "Poppins", sans-serif;
+  color: grey;
 }
-.carousel-item p{
-    font-family: 'Montserrat', sans-serif;
-    color: red;
-    font-weight: 700;
+.carousel-item p {
+  font-family: "Montserrat", sans-serif;
+  color: red;
+  font-weight: 700;
 }
 /* --------------------------------Footer Section------------------------------------ */
 
-#footer{
-    font-family: 'Montez', cursive;
-    text-align: center;
-    background-color: white;
-    color: grey;
-    height: 120px;
-}
-.social-icon{
-    color: grey!important;
-}
-.social-icon:hover{
-    color: black!important;
-}
-.footer-text{
-    text-decoration: none;
-    font-family: 'Montserrat', sans-serif;
+#footer {
+  padding-top: 2px;
+  font-family: "Montez", cursive;
+  text-align: center;
+  background-color: white;
+  color: grey;
+  height: 120px;
 }
 
-.fa-2x{
-    margin: 0 1%;
+.social-icon {
+  color: grey !important;
+}
+.social-icon:hover {
+  color: black !important;
+}
+.footer-text {
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+}
+
+.fa-2x {
+  margin: 0 1%;
 }
 
 /* ---------------------------------------------------------------------- */
-#myth-busters{
-    text-align: center;
-    background-color: #034afc;
-    color: white;
-    padding-bottom: 10px;
+#myth-busters {
+  text-align: center;
+  background-color: #034afc;
+  color: white;
+  padding-bottom: 10px;
 }
-.myth{
-    color: red;
+.myth {
+  color: red;
 }
-.fact{
-    color: #24fc03;
+.fact {
+  color: #24fc03;
 }
-.heart{
-    color: red;
+.heart {
+  color: red;
 }
-.myth-busters-div{
-    margin: 5% 0;
+.myth-busters-div {
+  margin: 5% 0;
 }
-.myth-busters-div p{
-    margin-bottom: 10px;
+.myth-busters-div p {
+  margin-bottom: 10px;
 }
 /* --------------------------------Statewise Data--------------------------------- */
-.state-container{
-    /* height:100vh;
+.state-container {
+  /* height:100vh;
     margin-bottom: -120px; */
-    color: white;
+  color: white;
 }
-.state-img{
-    height: 300px;
-    width: 250px;
-    border-radius: 3%;
+.state-img {
+  height: 300px;
+  width: 250px;
+  border-radius: 3%;
 }
-.state-img-div{
-    text-align: center;
+.state-img-div {
+  text-align: center;
 }
-.state-data-div{
-    padding: inherit;
+.state-data-div {
+  padding: inherit;
 }
 /* -------------------------------News Data--------------------------------------- */
-#news-updates{
-    padding: 0 0 10px 0;
-    text-align: left;
-    color: white;
-    background-image: linear-gradient(#41aceb , #034afc);
+#news-updates {
+  padding: 0 0 10px 0;
+  text-align: left;
+  color: white;
+  background-image: linear-gradient(#41aceb, #034afc);
 }
-#news-updates h1{
-    margin-top: 20px;
+#news-updates h1 {
+  margin-top: 20px;
 }
-.news-img{
-    width: 100%;
-    max-height: 400px;
+.news-img {
+  width: 100%;
+  max-height: 400px;
 }
-.news-row{
-    padding: 0 15px 0 15px;
+.news-row {
+  padding: 0 15px 0 15px;
 }
 /* ------------------------------World Data---------------------------------------- */
-.world-heading{
-    color: white;
-    margin-bottom: 10px;
+.world-heading {
+  color: white;
+  margin-bottom: 10px;
 }
-.world-row{
-    margin-top: 5%;
+.world-row {
+  margin-top: 5%;
 }
-.table-body tr td p{
-    color: white !important;
+.table-body tr td p {
+  color: white !important;
 }
 /* --------------------------------Logo------------------------------------- */
-.logo{
-    font-size: 30px;
-    margin-bottom: 0;
+.logo {
+  font-size: 30px;
+  margin-bottom: 0;
 }
-.logo-img{
-    height: 35px;
+.logo-img {
+  height: 35px;
 }
-.logo-text{
-    font-size: 15px;
-    color: black;
-    text-align: right;
-    line-height: 0;
+.logo-text {
+  font-size: 15px;
+  color: black;
+  text-align: right;
+  line-height: 0;
 }
-.navbar{
-    padding-left: 0;
+.navbar {
+  padding-left: 0;
 }
 
 /* ------------------------------About Me section---------------------- */
-.aboutme-img{
-    margin-top: 20px;
-    border-radius: 50%;
-    border-style: solid;
-    border-color: white;
-    height: 200px;
-    width: 230px;
+.aboutme-img {
+  margin-top: 20px;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: white;
+  height: 200px;
+  width: 230px;
 }
 .aboutme-container {
-    text-align: center;
-    color: white;
-    padding-left: 10%;
-    padding-right: 10%;
-    padding-bottom: 30px;
+  text-align: center;
+  color: white;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 30px;
 }
-.aboutme-container h2{
-    margin-top: 15px;
+.aboutme-container h2 {
+  margin-top: 15px;
 }
-.aboutme-container p{
-    margin-top: 10px;
+.aboutme-container p {
+  margin-top: 10px;
 }
-.aboutme-container a{
-    color: black;
+.aboutme-container a {
+  color: black;
 }
-.aboutme-donotknow{
-    margin-top: 30% !important;
+.aboutme-donotknow {
+  margin-top: 30% !important;
 }
 /* -----------------------media ---------------- */
 
-
 @media screen and (max-width: 600px) {
-    /* ------------------Navbar------------------------ */
-    .navbar{
-        padding-left: 0;
-        padding-right: 0;
-    }
+  /* ------------------Navbar------------------------ */
+  .navbar {
+    padding-left: 0;
+    padding-right: 0;
+  }
 
-    /* --------------------------------Logo------------------------------------- */
-    .logo{
-        font-size: 20px !important;
-        margin-bottom: 0;
-        margin-top: 0 !important;
-    }
-    .logo-img{
-        height: 25px !important;
-    }
-    .logo-text{
-        font-size: 10px !important;
-        color: black;
-        text-align: right;
-        line-height: 0;
-    }
-    .navbar{
-        padding-left: 0;
-    }
-    
-    /* -----------------Landing page---------------------- */
-    .heading{
-        font-size: 50px;
-        display: inline;
-    }
-    .heading-row h3{
-        font-size: 1.2rem;
-        display: inline;
-    }
-    .announce-div{
-        /* display: none; */
-        margin-top: 40px;
-        height: 124px;
-    }
-    .virus-img{
-        height: 50px;
-    }
-    .landing-page {
-        height: 100%;
-        width: 100%; 
-        background-size: auto;
-        position: relative;
-    }
-    .request p{
-        font-size: 15px;
-    }
-    .request .line2{
-        margin-bottom: 0;
-    }
-    #updates h2{
-        font-size: 25px;
-    }
-    .fa-5x {
-        font-size: 4em;
-        position: absolute;
-        left: 5px;
-        top: 15px;
-    }
-    .update-icon{
-        width: 30%;
-    }
-    .data-div{
-        width: 60%;
-    }
-    .fa-ambulance{
-        top: 30px;
-    }
-    .state-update{
-        padding-bottom: 20px;
-    }
-    .carousel-item img{
-        height: 200px !important;
-    }
-    .carousel-indicators li {
-        display: inline-block;
-        width: 8px;
-        height: 8px;
-        margin: 5px;
-        text-indent: 0;
-        cursor: pointer;
-        border: none;
-        border-radius: 50%;
-        background-color: #41aceb;
-        box-shadow: inset 1px 1px 1px 1px rgba(0,0,0,0.5);    
-    }
-    .carousel-indicators .active {
-        width: 8px;
-        height: 8px;
-        margin: 5px;
-        background-color: #034afc;
-    }
-    #myth-busters h1{
-        font-size: 25px;
-    }
-    .myth-busters-div p{
-        font-size: 0.6rem;
-    }
-    /* --------------------------world updates section------------------------ */
-    .table{
-        font-size: 10px;
-    }
-    
-    .update-icon{
-        width: 30%;
-    }
-    
-    .world-icon{
-        font-size: 4em;
-        position: absolute;
-        left: 15px;
-        top: 15px;
-    }
-    .world-update-data{
-        min-width: 100%;
-    }
-    .world-heading{
-        font-size: 0.9rem;
-        text-align: center;
-    }
-    .world-data-div h2{
-        font-size: 25px;
-    }
-    .world-data-div{
-        width: 60%;
-    }
-    /* --------------------footer section-------------------- */
-    #footer h2{
-        padding-top: 5px;
-        font-size: 90%;
-        margin-bottom: 1%;
-    }
-    #footer a{
-        font-size: 50%;
-    }
-    #footer{
-        height: 80%;
-        padding-bottom: 2px;
-        width: 100%;
-    }
-    /* -----------------------news section------------------ */
-    .news-container h1{
-        font-size: 1.5rem;
-    }
-    .news-container h2{
-        font-size: 1rem;
-    }
-    .news-container h4, h5{
-        font-size: 0.8rem;
-    }
-    .news-container p{
-        font-size: 0.6rem;
-    }
-    .news-description{
-        margin-bottom: 1% !important;
-    }
-    .news-data{
-        margin-bottom: 6%;
-    }
-    /* --------------------State Section----------------------- */
-    /* .state-container{
+  /* --------------------------------Logo------------------------------------- */
+  .logo {
+    font-size: 20px !important;
+    margin-bottom: 0;
+    margin-top: 0 !important;
+  }
+  .logo-img {
+    height: 25px !important;
+  }
+  .logo-text {
+    font-size: 10px !important;
+    color: black;
+    text-align: right;
+    line-height: 0;
+  }
+  .navbar {
+    padding-left: 0;
+  }
+
+  /* -----------------Landing page---------------------- */
+  .heading {
+    font-size: 50px;
+    display: inline;
+  }
+  .heading-row h3 {
+    font-size: 1.2rem;
+    display: inline;
+  }
+  .announce-div {
+    /* display: none; */
+    margin-top: 40px;
+    height: 124px;
+  }
+  .virus-img {
+    height: 50px;
+  }
+  .landing-page {
+    height: 100%;
+    width: 100%;
+    background-size: auto;
+    position: relative;
+  }
+  .request p {
+    font-size: 15px;
+  }
+  .request .line2 {
+    margin-bottom: 0;
+  }
+  #updates h2 {
+    font-size: 25px;
+  }
+  .fa-5x {
+    font-size: 4em;
+    position: absolute;
+    left: 5px;
+    top: 15px;
+  }
+  .update-icon {
+    width: 30%;
+  }
+  .data-div {
+    width: 60%;
+  }
+  .fa-ambulance {
+    top: 30px;
+  }
+  .state-update {
+    padding-bottom: 20px;
+  }
+  .carousel-item img {
+    height: 200px !important;
+  }
+  .carousel-indicators li {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin: 5px;
+    text-indent: 0;
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+    background-color: #41aceb;
+    box-shadow: inset 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
+  }
+  .carousel-indicators .active {
+    width: 8px;
+    height: 8px;
+    margin: 5px;
+    background-color: #034afc;
+  }
+  #myth-busters h1 {
+    font-size: 25px;
+  }
+  .myth-busters-div p {
+    font-size: 0.6rem;
+  }
+  /* --------------------------world updates section------------------------ */
+  .table {
+    font-size: 10px;
+  }
+
+  .update-icon {
+    width: 30%;
+  }
+
+  .world-icon {
+    font-size: 4em;
+    position: absolute;
+    left: 15px;
+    top: 15px;
+  }
+  .world-update-data {
+    min-width: 100%;
+  }
+  .world-heading {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  .world-data-div h2 {
+    font-size: 25px;
+  }
+  .world-data-div {
+    width: 60%;
+  }
+  /* --------------------footer section-------------------- */
+  #footer h2 {
+    padding-top: 5px;
+    font-size: 90%;
+    margin-bottom: 0;
+  }
+  #footer a {
+    font-size: 50%;
+  }
+  #footer {
+    height: 80%;
+    padding-bottom: 2px;
+    width: 100%;
+  }
+  /* -----------------------news section------------------ */
+  .news-container h1 {
+    font-size: 1.5rem;
+  }
+  .news-container h2 {
+    font-size: 1rem;
+  }
+  .news-container h4,
+  h5 {
+    font-size: 0.8rem;
+  }
+  .news-container p {
+    font-size: 0.6rem;
+  }
+  .news-description {
+    margin-bottom: 1% !important;
+  }
+  .news-data {
+    margin-bottom: 6%;
+  }
+  /* --------------------State Section----------------------- */
+  /* .state-container{
         height: 100vh;
         margin-bottom: -76px;
     } */
-    .state-container h1{
-        font-size: 1.5rem;
-    }
-    .state-container p{
-        font-size: 0.6rem;
-    }
-    .state-data-div{
-        padding-left: 15px;
-        margin-top: 30px;
-        margin-bottom: 40%;
-    }
-    /* --------------------------------About me Section---------------------- */
-    
-    .aboutme-container p{
-        font-size: 1rem;
-    }
+  .state-container h1 {
+    font-size: 1.5rem;
+  }
+  .state-container p {
+    font-size: 0.6rem;
+  }
+  .state-data-div {
+    padding-left: 15px;
+    margin-top: 30px;
+    margin-bottom: 40%;
+  }
+  /* --------------------------------About me Section---------------------- */
+
+  .aboutme-container p {
+    font-size: 1rem;
+  }
 }

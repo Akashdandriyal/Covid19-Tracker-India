@@ -9,91 +9,103 @@ appp.set('view engine', 'ejs');
 appp.use(bodyParser.urlencoded({extended: true}));
 appp.use(express.static("public"));
 require('dotenv').config({path: __dirname + '/.env'});
+
 let covidData = "";
 
 
-// Corona virus lab data fetch for india
-let labData = "";
-const url1 = "https://api.covid19india.org/data.json";
-https.get(url1, function(response){
-    let body = "";
-    response.on("data", function(chunk){
-        body += chunk;
-        
-    });
-
-    response.on("end", function(){
-        labData = JSON.parse(body);
-        
-    });
-});
-
-
-// Corona virus district data fetch for states
-let districtData = "";
-const url2 = "https://api.covid19india.org/state_district_wise.json";
-https.get(url2, function(response){
-    let body = "";
-    response.on("data", function(chunk){
-        body += chunk;
-
-    });
-
-    response.on("end", function(){
-        districtData = JSON.parse(body);
-
-    });
-});
-
-
 appp.get("/", function(req, res){
-    const url = "https://api.covid19api.com/summary";
-    https.get(url, function(response){
-        let body = "";
-        response.on("data", function(chunk){
-            body += chunk;
-            
-        });
+    function getData() {
+        let labData = "";
+        return new Promise(function (resolve, reject) {
+            // Corona virus lab data fetch for india
+            const url1 = "https://api.covid19india.org/data.json";
+            https.get(url1, function(response1){
+                let body = "";
+                response1.on("data", function(chunk){
+                    body += chunk;
+                    // console.log(body);
+                });
 
-        response.on("end", function(){
-            covidData = JSON.parse(body);
-            const fullDate = covidData.Countries[76].Date;
-            let date = fullDate.slice(8, 10);
-            let month = fullDate.slice(5, 7);
-            let year = fullDate.slice(0,4);
-            let time = fullDate.slice(11, 19);
-            const confirmedCase = covidData.Countries[76].TotalConfirmed;
-            const newConfirmed = covidData.Countries[76].NewConfirmed;
-            const deaths = covidData.Countries[76].TotalDeaths;
-            const newDeaths = covidData.Countries[76].NewDeaths;
-            const recovered = covidData.Countries[76].TotalRecovered;
-            const newRecovered = covidData.Countries[76].NewRecovered;
-            const activeCase = confirmedCase - deaths - recovered;
-            var newActiveCase = newConfirmed - newDeaths - newRecovered;
-            if(newActiveCase > 0){
-                newActiveCase = "+ " + newActiveCase;
-            }
-            const recoveryRate = ((recovered / confirmedCase) * 100).toFixed(2);
-            const testsDone = labData.tested[(labData.tested.length-1)].totalsamplestested;
-            const newTestsDone = labData.tested[(labData.tested.length-1)].samplereportedtoday
-            res.render("home", {
-                confirmedCase: confirmedCase, 
-                newConfirmed: newConfirmed, 
-                deaths: deaths, 
-                newDeaths: newDeaths, 
-                recovered: recovered, 
-                newRecovered: newRecovered, 
-                activeCase: activeCase, 
-                newActiveCase: newActiveCase, 
-                recoveryRate: recoveryRate, 
-                date: (date + "-" + month + "-" + year), 
-                time: time, 
-                testsDone: testsDone, 
-                newTestsDone: newTestsDone
+                response1.on("end", function(){
+                    labData = JSON.parse(body);
+                    resolve(labData);
+                });
+            });
+        })
+    }
+    getData().then(function (labData) {
+        console.log(labData);
+        // Corona virus data fetch for india
+        const url = "https://api.covid19api.com/summary";
+        https.get(url, function(response){
+            let body = "";
+            response.on("data", function(chunk){
+                body += chunk;
+                
+            });
+
+            response.on("end", function(){
+                covidData = JSON.parse(body);
+                let fullDate = "";
+                let date = "";
+                let month = "";
+                let year = "";
+                let time = "";
+                let confirmedCase = 0;
+                let newConfirmed = 0;
+                let deaths = 0;
+                let newDeaths = 0;
+                let recovered = 0;
+                let newRecovered = 0;
+                let activeCase = 0;
+                let newActiveCase = 0;
+                let recoveryRate = 0;
+                let testsDone = 0;
+                let newTestsDone = 0;
+                for (let i = 0; i < covidData.Countries.length; i++) {
+                    if(covidData.Countries[i].CountryCode === 'IN') {
+                        fullDate = covidData.Countries[i].Date;
+                        date = fullDate.slice(8, 10);
+                        month = fullDate.slice(5, 7);
+                        year = fullDate.slice(0,4);
+                        time = fullDate.slice(11, 19);
+                        confirmedCase = covidData.Countries[i].TotalConfirmed;
+                        newConfirmed = covidData.Countries[i].NewConfirmed;
+                        deaths = covidData.Countries[i].TotalDeaths;
+                        newDeaths = covidData.Countries[i].NewDeaths;
+                        recovered = covidData.Countries[i].TotalRecovered;
+                        newRecovered = covidData.Countries[i].NewRecovered;
+                        activeCase = confirmedCase - deaths - recovered;
+                        newActiveCase = newConfirmed - newDeaths - newRecovered;
+                        if(newActiveCase > 0){
+                            newActiveCase = "+ " + newActiveCase;
+                        }
+                        recoveryRate = ((recovered / confirmedCase) * 100).toFixed(2);
+                        testsDone = labData.tested[(labData.tested.length-1)].totalsamplestested;
+                        newTestsDone = labData.tested[(labData.tested.length-1)].samplereportedtoday;
+                        break;
+                    }
+                }
+                res.render("home", {
+                    confirmedCase: confirmedCase, 
+                    newConfirmed: newConfirmed, 
+                    deaths: deaths, 
+                    newDeaths: newDeaths, 
+                    recovered: recovered, 
+                    newRecovered: newRecovered, 
+                    activeCase: activeCase, 
+                    newActiveCase: newActiveCase, 
+                    recoveryRate: recoveryRate, 
+                    date: (date + "-" + month + "-" + year), 
+                    time: time, 
+                    testsDone: testsDone, 
+                    newTestsDone: newTestsDone
+                });
             });
         });
-    });
-    
+    }).catch(err => {
+        console.log(err);
+    })
 });
 
 appp.post("/states", function(req, res){
@@ -103,6 +115,7 @@ appp.post("/states", function(req, res){
 
 appp.get("/states/:states" ,function(req, res){
     const state= _.toLower(_.startCase(req.params.states));
+    // Corona virus data fetch for states of India
     const url = "https://api.covid19india.org/data.json";
     https.get(url, function(response){
         let body = "";
@@ -167,16 +180,27 @@ appp.get("/news", function(req, res){
 // ------------------------GET REQUEST FOR THE WORLD UPDATES
 
 appp.get("/world", function(req, res){
-    const fullDate = covidData.Date;
-    let date = fullDate.slice(8, 10);
-    let month = fullDate.slice(5, 7);
-    let year = fullDate.slice(0,4);
-    let time = fullDate.slice(11, 19);
-    res.render("world", {
-        covidData: covidData.Countries, 
-        worldUpdate: covidData.Global,
-        date: (date + "-" + month + "-" + year), 
-        time: time
+    const url = "https://api.covid19api.com/summary";
+    https.get(url, function(response){
+        let body = "";
+        response.on("data", function(chunk){
+            body += chunk;
+            
+        });
+        response.on("end", function(){
+            covidData = JSON.parse(body);
+            const fullDate = covidData.Date;
+            let date = fullDate.slice(8, 10);
+            let month = fullDate.slice(5, 7);
+            let year = fullDate.slice(0,4);
+            let time = fullDate.slice(11, 19);
+            res.render("world", {
+                covidData: covidData.Countries, 
+                worldUpdate: covidData.Global,
+                date: (date + "-" + month + "-" + year), 
+                time: time
+            });
+        });
     });
 });
 
