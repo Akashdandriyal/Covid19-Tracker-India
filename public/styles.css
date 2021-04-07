@@ -15,6 +15,12 @@ body {
   /* font-family: 'Tajawal', sans-serif; */
   font-family: "Montserrat", sans-serif;
 }
+
+::selection {
+  color: #ffffff;
+  background-color: red;
+}
+
 h1,
 h3 {
   font-family: "Poppins", sans-serif;
@@ -46,6 +52,47 @@ h3 {
 .nav-item a {
   color: white;
 }
+.headerDropdown {
+  height: 40px;
+  display: flex;
+}
+
+.headerDropdownButton {
+  margin: 0 !important;
+  background-color: #41aceb !important;
+  font-weight: bold;
+  opacity: 0.8;
+  border: none;
+}
+
+.headerDropdownButton:hover {
+  border: none;
+  background-color: transparent;
+}
+
+.headerDropdownLinks > a {
+  color: #41aceb;
+  font-weight: bold;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.headerDropdownLinks > a > span {
+  color: red;
+  animation: blink 1s linear infinite;
+  font-size: 60%;
+}
+
 .heading {
   font-size: 80px;
   color: white;
@@ -351,6 +398,37 @@ h3 {
 .aboutme-donotknow {
   margin-top: 30% !important;
 }
+
+/* ********************Page Not Found, Error Page************ */
+
+.pageNotFoundContainer,
+.errorPageContainer {
+  height: 100vh;
+}
+
+.pageNotFound,
+.errorPage {
+  text-align: center;
+  margin-top: 15%;
+}
+
+.pageNotFound > h1,
+.errorPage > h1 {
+  font-size: 5rem;
+  color: #ffffff;
+}
+
+.pageNotFound > h1 > img,
+.errorPage > h1 > img {
+  height: 4.3rem;
+  object-fit: contain;
+}
+
+.pageNotFound > h4,
+.errorPage > h4 {
+  font-size: 2rem;
+}
+
 /* -----------------------media ---------------- */
 
 @media screen and (max-width: 600px) {
@@ -358,6 +436,17 @@ h3 {
   .navbar {
     padding-left: 0;
     padding-right: 0;
+  }
+
+  .headerDropdown {
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .headerDropdownButton {
+    padding-left: 0;
+    text-align: left;
   }
 
   /* --------------------------------Logo------------------------------------- */

@@ -22,7 +22,15 @@
           <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                <a class="nav-link" href="/world"><strong>WORLD UPDATE</strong></a>
+                <div class="dropdown headerDropdown">
+                  <button class="btn btn-primary dropdown-toggle headerDropdownButton" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    WORLD UPDATE
+                  </button>
+                  <div class="dropdown-menu headerDropdownLinks" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="/covid19Cases">Covid-19 Cases</a>
+                    <a class="dropdown-item" href="/covid19Vaccination">Covid-19 Vaccination <span>NEW</span></a>
+                  </div>
+                </div>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/news"><strong>NEWS</strong></a>

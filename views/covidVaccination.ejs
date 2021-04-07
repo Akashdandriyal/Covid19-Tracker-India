@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid19 Tracker India | World Updates</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="/pictures/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/pictures/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/pictures/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/pictures/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/pictures/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/pictures/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/pictures/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/pictures/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/pictures/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/pictures/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/pictures/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/pictures/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/pictures/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/pictures/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/pictures/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-174551218-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-174551218-1');
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montez&family=Montserrat:wght@400&family=Poppins:wght@700&family=Tajawal&display=swap" rel="stylesheet">    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles.css">
+    <script src="https://kit.fontawesome.com/6eee5c1f8b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="progress-bar"></div>
+    <div class="container world-updates">
+        <%- include('partials/header'); -%>
+        <div class="row world-row">
+            <h2 class="world-heading">
+                Covid-19 Vaccination updates as on 
+                <%= date %> at <%= time %> 
+                
+            </h2>
+            <div class="update-data col-lg-6 col-md-12 world-update-data">
+                <div class="update-div update-icon">
+                    <i class="fas fa-syringe fa-5x world-icon"></i>
+                </div>
+                <div class="update-div world-data-div">
+                    <div>
+                        <h2><strong>World</strong></h2>
+                        <p><strong>DOSES ADMINISTERED:</strong> <%= worldVaccination.doses_admin %> </p>
+                        <p><strong>PEOPLE PARTIALLY VACCINATED:</strong> <%= worldVaccination.people_partially_vaccinated %> </p>
+                        <p><strong>PEOPLE FULLY VACCINATED:</strong> <%= worldVaccination.people_fully_vaccinated %> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="table table-striped table-hover">
+                    <thead class="table-header">
+                        <tr>
+                            <td>
+                                <P><strong>COUNTRY</strong></P>
+                            </td>
+                            <td>
+                                <P><strong>DATE</strong></P>
+                            </td>
+                            <td>
+                                <P><strong>DOSES ADMINISTERED</strong></P>
+                            </td>
+                            <td>
+                                <P><strong>PARTIALLY VACCINATED</strong></P>
+                            </td>
+                            <td>
+                                <P><strong>FULLY VACCINATED</strong></P>
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody class="table-body">
+                        
+                        <% vaccineData.forEach(element => { %>
+                        <tr>
+                            <td>
+                                <p><%= element.country %></p>
+                            </td>
+                            <td>
+                                <p><strong><%= element.date %></strong></p>
+                            </td>
+                            <td>
+                                <p><strong><%= element.doses_admin %></strong></p>
+                            </td>
+                            <td>
+                                <p><strong><%= element.people_partially_vaccinated %></strong></p>
+                            </td>
+                            <td>
+                                <p><strong><%= element.people_fully_vaccinated %></strong></p>
+                            </td>
+                        </tr>
+                        <% }); %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <%- include('partials/footer') -%> 
+    <script src="/index2.js"></script>
+</body>
+</html>
