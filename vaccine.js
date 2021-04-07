@@ -6,7 +6,10 @@ const getVaccine = () => {
     let date = "";
     let time = "";
     return puppeteer
-    .launch()
+    .launch({
+    	headless: true,
+        args: ['--no-sandbox','--disable-setuid-sandbox']
+    })
     .then(browser => {
         return browser.newPage();
     })
