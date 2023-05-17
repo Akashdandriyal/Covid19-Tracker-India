@@ -1,4 +1,5 @@
 # Covid19-Tracker-India
+### [APIs deprecated]
 A website for showing latest updates on covid19 data and news throughout the world. 
 Link to my website -> [Covid19 Tracker India](https://covid19trackerindia224.herokuapp.com/)
 
